@@ -1,0 +1,23 @@
+1) Save the secret_key in secret.txt at root of project
+with open(os.path.join(BASE_DIR,'secret.txt')) as f:
+    SECRET_KEY = f.read().strip()
+
+2) Install SSL Certificate 
+
+3) #HTTPS settings in settings.py
+SESSION_COKKIE_SECURE = True
+CRSF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+
+4) #HSTS Settings in settings.py
+SECURE_HSTS_SECONDS =  31536000
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+5) SET ALLOWED HOST ['domainname.com'] in settings.py
+
+6) Turn Off debugging  ON PROD DEBUG = False in Setting file 
+
+7) Static File setting
+
+python manage.py check --deploy
